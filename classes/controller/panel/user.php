@@ -160,8 +160,7 @@ class Controller_Panel_User extends Auth_Crud {
 	
 			if (core::post('password1')==core::post('password2'))
 			{
-				$password1_temp = core::post('password1'); // This temporary variable is needed - see http://stackoverflow.com/questions/1532693/weird-php-error-cant-use-function-return-value-in-write-context for why
-				if(!empty($password1_temp)){
+				if(!empty(core::post('password1'))){
 	
 					$user->password = core::post('password1');
 					$user->last_modified = Date::unix2mysql();
